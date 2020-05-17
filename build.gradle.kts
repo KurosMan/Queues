@@ -14,6 +14,7 @@ repositories {
 
 sourceSets.main {
     java.srcDirs("src/main/java")
+    resources.srcDirs("resources")
 }
 
 dependencies {
@@ -25,6 +26,7 @@ dependencies {
     runtimeOnly("org.springframework.boot:spring-boot-devtools")
     implementation("org.springdoc:springdoc-openapi-ui:1.3.9") // to set up springdoc-openapi
     implementation("io.springfox:springfox-swagger2:2.9.2")// to set up swagger-ui
+    implementation("org.springframework.amqp:spring-rabbit:2.2.6.RELEASE")
 }
 
 tasks.withType<KotlinCompile> {
@@ -35,7 +37,7 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("com.example.EchoApplicationKt")
+    mainClass.set("com.cgd.tutorials.RabbitAmqpTutorialsApplication")
 }
 
 
