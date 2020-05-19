@@ -1,7 +1,6 @@
 package com.cgd.tutorials.tut1
 
 import org.springframework.amqp.core.Queue
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Profile
@@ -12,7 +11,7 @@ import org.springframework.context.annotation.Profile
 class Tut1Config {
     @Bean
     fun hello(): Queue {
-        return Queue("hello")
+        return Queue("rpc_queue")
     }
 
     @Profile("receiver")
